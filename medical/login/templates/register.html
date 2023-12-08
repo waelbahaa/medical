@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+  <style>
+    .main_item{
+      background-color:rgb(245, 160, 160);
+    }
+    .item{background-color:hsl(261, 82%, 52%);}
+
+</style>
+   </head>
+</head>
+<body>
+    <div style="height:auto;width:100%;background-color:rgb(191, 155, 233);">
+    <form method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+         
+                <form action="" method="POST">
+                    <div class="container">
+                    {% csrf_token %}
+                    <div class="text-center  texttitle" style="width:100%;height:50px;background-color:rgb(85, 85, 241);">
+                        <h2 style="color:white;">Register</h2>
+                        
+                    </div>
+                    <hr>
+                    
+                    <table>
+                        
+                        
+                
+                    <form> 
+                    
+                        <tr> 
+                            <td> 
+                    <div class="form-group arrange texttitle  main_item">
+                        <label for="">First name</label>
+                        <td class="item">  {{form.firstname}}</td>
+                       
+                        
+                
+                
+                    </div>
+                    </td>
+                </tr>
+                <tr> 
+                    <td> 
+                    <div class="form-group arrange texttitle main_item">
+                        <label for="">Last name</label>
+                        <td class="item"> {{form.lastname}}</td>
+                        
+                    </div>
+                    </td>
+                    </tr>
+                    <tr> 
+                        <td> 
+                    <div class="form-group arrange texttitle main_item">
+                        <label for="">Profile picture</label>
+                        <td><input type="file" id="img" name="Profilepicture" accept="image/*"></td>
+                        
+                        
+                    </div>
+                    </td>
+                    </tr>
+                    <tr> 
+                        <td> 
+                    <div class="form-group arrange texttitle main_item">
+                        <label for="">User name</label>
+                        <td class="item""> {{form.username}}</td>
+                        
+                        
+                    </div>
+            </td>
+            </tr>
+            <tr> 
+                <td> 
+                    <div class="form-group arrange texttitle main_item">
+                        <label for="">Email</label>
+                        <td class="item"> {{form.email}}</td>
+                        
+                            
+                       
+                    </div>
+                    </td>
+                    </tr>
+                    <tr> 
+                        <td> 
+                    <div class="form-group arrange texttitle main_item">
+                        <label for="">Password</label>
+                        <td class="item"> {{form.password}}</td>
+                                  
+                           
+                       
+                    </div>
+                    </td>
+                    </tr>
+                    <tr> 
+                        <td> 
+                    <div class="form-group arrange texttitle main_item">
+                        <label for="">Confirm Password</label>
+                        <td class="item"> {{form.confirmpassword}}</td>
+                                 
+                            
+                       
+                    </div>
+                    </td></tr>
+                    <tr> 
+                        <td> 
+                    <div class="form-group arrange texttitle main_item">
+                        <label for="">Address line</label>
+                        <td class="item"> {{form.address_line}}</td>
+                                 
+                            
+                       
+                    </div>
+                    </td></tr>
+                    <tr> 
+                        <td> 
+                    <div class="form-group arrange texttitle main_item">
+                        <label for="">Address_city</label>
+                        <td class="item"> {{form.address_city}}</td>
+                                 
+                            
+                       
+                    </div>
+                    </td>
+                    </tr>
+                    <tr> 
+                        <td> 
+                    <div class="form-group arrange texttitle main_item">
+                        <label for="">Address state</label>
+                        <td class="item"> {{form.address_state}}</td>
+                           
+                    </div>
+                    </td>
+                    </tr>
+                    <tr> 
+                        <td> 
+                    <div class="form-group arrange texttitle main_item">
+                        <label for="">Address pincode</label>
+                        <td class="item"> {{form.address_pincode}}</td>
+                                 
+                            
+                       
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="Status" >
+                            <option value="1">Patient</option>
+                            <option value="2">Doctor</option>
+                           
+                          </select>
+                    </td>
+                </tr>
+            
+                {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            </table>
+                    <div class="btn-group">
+                <button class="small" type="submit" class="btn float-end shadow btn-success px-4">Register</button>
+                    </div>
+      
+      
+    </form>
+    </table>
+</form>
+</div>
+</body>
+</html>
